@@ -168,7 +168,7 @@ body{
 .container {
   height: 56px;
   width: 100%;
-  padding: 0 11px;
+  padding: 0 0 0 15px;
 }
 
 .item {
@@ -185,7 +185,7 @@ body{
     width: 122px;
 }
 .item-3 {
-    width: 117px;
+    width: 108.64px;
 }
 .third{
     height: 40px;
@@ -197,7 +197,7 @@ body{
   align-items: center;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 4px;
-  padding:0 8px ;
+  padding:0 7px 0 4px;
 }
 .image-wrapper {
   display: flex;
@@ -207,22 +207,23 @@ body{
   border-radius: 14px;
   margin-left: 0;
   margin-right: 4px;
-  width: 32px;
+  width: 40px;
   height: 32px;
 }
-
 .text-wrapper {
   display: flex;
 }
-
 .text-wrapper span {
   background-color: rgba(0, 0, 0, 0);
   color: rgb(33, 33, 33);
   font-size: 12px;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-style: normal;
+  line-height: 1.55;
 }
-
+.edit{
+    padding-top: 4px;
+}
 .bottom-border {
   height: 1px;
 }
@@ -237,6 +238,9 @@ body{
 .link-color{
     white-space: nowrap;
     color: #333333;
+    font-family:  Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.5px;
 }
 .ads{
     object-fit: cover;
