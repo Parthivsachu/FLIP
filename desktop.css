@@ -376,7 +376,7 @@ nav {
     font-family: 'semi';
     font-size: 12.46px;
     text-transform: uppercase;
-    letter-spacing: .2px;
+    letter-spacing: .25px;
     display: inline-block;
 
     --webkit-font-smoothing: antialiased;
@@ -488,6 +488,7 @@ nav {
     font-family: 'normal';
     font-size: 14px;
     line-height: 19.6px;
+    transform: translateY(-1px);
 }
 .select{
     width: 100%;
@@ -499,11 +500,11 @@ nav {
     font-family: 'normal';
     font-size: 13.3px;
     align-items: center;
-    line-height: 19.6px;
+    line-height: 14px;
     color: #212121;
     padding: 0 5px;
     outline: none;
-    vertical-align: middle;
+    vertical-align: baseline;
     align-items: center;
 }
 .option{
@@ -542,7 +543,7 @@ nav {
     height: 11px;
 }
 .filter-container{
-    margin: 7px 0;
+    margin: 7px 0 6px 0;
 }
 .search-bar{
     margin-bottom: 7px;
@@ -589,7 +590,7 @@ nav {
 }
 .checkbox-text{
     vertical-align: top;
-    font-size: 13.4px;
+    font-size: 13.3px;
     padding-left: 7px;
     color: #212121;
     display: inline-block;
@@ -615,17 +616,17 @@ nav {
     color: #878787;
     width: 16px;
     height: 16px;
-    font-size: 11px;
-    line-height: 16px;
+    font-family: 'semi';
+    font-size: 10.3px;
+    line-height: 15px;
     text-align: center;
     display: inline-block;
     border: 1px solid #e0e0e0;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, .2);
     vertical-align: middle;
-    margin: 0 2px 0 8px;
+    margin: 0 2px 2px 8px;
     cursor: pointer;
 }
-
 .add{
     font-family: 'semi';
     font-size: 11.3px;
@@ -699,10 +700,11 @@ nav {
     vertical-align: top;
 }
 .link-div{
-    line-height: 1.45;
-    font-family:  Inter, -apple-system, Helvetica, Arial, sans-serif;
-    font-size: 11.58px;
-    letter-spacing: .13px;
+    line-height: 1.35;
+    font-family:  'normal';
+    /* font-family:  Inter, -apple-system, Helvetica, Arial, sans-serif; */
+    font-size: 12px;
+    letter-spacing: .11px;
     clear: both;
     color:#878787;
 }
@@ -714,7 +716,7 @@ nav {
 }
 .hOne{
     font-weight: 500;
-    font-size: 15.3px;
+    font-size: 15.2px;
     margin-top: 8px;
     display: inline-block;
     font-family: 'semi';
@@ -728,7 +730,7 @@ nav {
 }
 .sort{
     display: flex;
-    line-height: 19.6px;
+    line-height: 20px;
 }
 .sort-head{
     border-bottom: 2px solid transparent;
@@ -854,7 +856,7 @@ nav {
     line-height: 18px;
 }
 .mobSpec{
-    margin-top: 13px;
+    margin-top: 8px;
     display: inline-block;
 }
 .unorder{
@@ -865,7 +867,7 @@ nav {
 }
 .li{
     display: table-row;
-    font-size: 13px;
+    font-size: 13.3px;
 }
 .li::before{
     content: "•";
@@ -950,11 +952,12 @@ nav {
 }
 .upto{
     color: rgb(0, 0, 0); 
-    font-size: 14px; 
+    font-size: 13.3px; 
     font-style: normal; 
     font-weight: 400;
     display: inline-flex;
     vertical-align: middle;
+    line-height: 14px;
     /* white-space: pre; */
 }
 .rate{
@@ -967,7 +970,7 @@ nav {
     font-weight: 100;
 }
 .stars{
-    margin-top: 6px;
+    margin-top: 5px;
 }
 .four{
     line-height: normal;
@@ -977,15 +980,19 @@ nav {
     border-radius: 3px;
     font-family: 'semi';
     font-weight: 500;
-    font-size: 12px;
+    font-size: 11.3px;
     vertical-align: middle;
     background-color: #388e3c;
 }
 .review{
-    padding-left: 8px;
+    padding-left: 4.3px;
     font-weight: 500;
     color: #878787;
     font-family: 'semi';
+}
+.sizing{
+    font-size: 13.3px;
+    line-height: 18px;
 }
 .fourStar{
     width: 100%;
@@ -1000,7 +1007,10 @@ nav {
 .numbers{
     padding: 4px 0;
     text-align: center;
-    font-weight: 500;
+    font-family: 'semi';
+    font-size: 13.3px;
+    letter-spacing: .1px;
+    display: flex;
 }
 .new{
     display: inline-block;
@@ -1016,9 +1026,11 @@ nav {
     background: #2874f0;
     color: #fff;
 }
-.last{
+.next{
     color: #2874f0;
     font-family: 'semi';
+    display: inline-block;
+    padding: 0 25px;
 }
 .useless{
     display: inline-block;
@@ -1034,18 +1046,22 @@ nav {
     padding: 16px;
     background-color: #fff;
 }
+.did{
+    font-size: 15.2px;
+}
 .yeah{
     display: inline-block;
-    margin-left: 24px;
+    margin-left: 21px;
     font-size: 16px;
 }
 .maybe{
     border-radius: 2px;
+    height: 33.59px;
     padding: 6px 28px;
     border: 1px solid #d7d7d7;
-    margin: 8px;
+    margin-right: 8px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13.3px;
     display: inline-block;
     cursor: pointer;
 }
@@ -1063,12 +1079,13 @@ nav {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
 }
 .revHead{
-    font-size: 20px;
-    font-weight: 500;
+    font-family: 'semi';
+    font-size: 19px;
     color:#212121 ;
     padding: 15px 20px;
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
+    line-height: 28px;
 }
 .revDiv{
     display: flex;
@@ -1131,9 +1148,12 @@ nav {
     padding-bottom: 8px;
     height: auto;
 }
+.padleft{
+    padding-left: 24px;
+}
 .repeatMost{
     padding-left: 24px;
-    font-size: 14px;
+    font-size: 13.3px;
     color: #878787;
 }
 .mostRev{
@@ -1148,9 +1168,9 @@ nav {
 .short{
     padding-left: 12px;
     padding-top: 3px;
-    font-size: 14px;
+    font-family: 'semi';
+    font-size: 13.3px;
     color: #212121;
-    font-weight: 500;
 }
 .row{
     width: 100%;
@@ -1182,13 +1202,9 @@ nav {
     height: 14px;
     vertical-align: sub;
 }
-.recent{
-    font-size: 14px;
-    color: #878787;
-}
 .simple{
     font-family: 'normal';
-    font-size: 14px;
+    font-size: 13.3px;
     color: #212121;
 }
 footer{
@@ -1278,15 +1294,21 @@ footer{
     margin-left: 8px;
  }
  .help{
-    padding-top: 30px;
+    padding-top: 29px;
     text-align: center;
     cursor: pointer;
+ }
+ .helpSpan{
+    font-size: 13.3px;
  }
  .decide{
     color: #2874f0;
     line-height: 1;
-    margin: 5px 0 20px;
-    font-size: 18px;
+    margin: 7px 0 20px;
+    /* font-size: 18px; */
+ }
+ .decide span{
+    font-size: 17px;
  }
  .helpArrow{
     width: 6px;
@@ -1296,17 +1318,34 @@ footer{
 
  @media screen  and (max-width:1024px) {
     .sort-commmon{
-    padding:9px 0 3px;
-    margin: 0 10px;
-    font-size: 13.3px;
-}
-.sort-head{
-    padding: 9px 10px 3px 0;
-}
-.categories-div{
-    margin: 0 auto;
-    justify-content: space-evenly;
+        padding:9px 0 3px;
+        margin: 0 10px;
+        font-size: 13.3px;
+    }
+    .sort-head{
+        padding: 9px 10px 3px 0;
+    }
+    .categories-div{
+        margin: 0 auto;
+        justify-content: space-evenly;
+    }
+    .link-div{
+        line-height: 1.36;
+    }
+    .link-color{
+        font-size: 11.25px;
+        letter-spacing: .05px;
+        line-height: 1.55;
+    }
+    .hOne{
+        line-height: 22.3px;
+    }
+    .sort{
+        line-height: 17px;
+    }
+    .Popularity{
+        padding-bottom: 5px;
+    }
     
-}
     
  }
