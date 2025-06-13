@@ -261,7 +261,6 @@ function generateProductHtml(product) {
 function renderProducts(sortedProducts = products) {
     const container = document.getElementById('products-container');
     const containerTwo = document.getElementById('container-two');
-    
     if (container) {
         container.innerHTML = '';
         sortedProducts.slice(0, 4).forEach(product => {
@@ -269,7 +268,6 @@ function renderProducts(sortedProducts = products) {
         });
         container.innerHTML += `<div class="scroll-div"></div>`;
     }
-
     if (containerTwo) {
         containerTwo.innerHTML = '';
         sortedProducts.slice(4).forEach(product => {
@@ -296,7 +294,6 @@ function toggleSortModal() {
         });
     }
 }
-
 function updateSelectedOption(selectedOption) {
     sortOptions.forEach(option => {
         const checkbox = option.querySelector('.checkbox-input');
@@ -313,8 +310,6 @@ function updateSelectedOption(selectedOption) {
         }
     });
 }
-
-
 function sortProducts(sortBy) {
     let sortedProducts = [...products];
     
@@ -338,7 +333,6 @@ function sortProducts(sortBy) {
     }
     renderProducts(sortedProducts);
 }
-
 if (sortButton && sortModal && sortOptions) {
     sortButton.addEventListener('click', toggleSortModal);
 
@@ -360,7 +354,6 @@ if (sortButton && sortModal && sortOptions) {
         updateSelectedOption(currentSort);
         sortProducts(currentSort);
 
-        
 window.addEventListener('click', (e) => {
   if (!filterModal.contains(e.target) && !filterBtn.contains(e.target)) {
     filterModal.classList.remove('show');
@@ -431,27 +424,19 @@ clearTextBtn?.addEventListener('click', () => {
 });
 
 const cancelBtn = document.querySelector('.cancel');
-
 cancelBtn?.addEventListener('click', () => {
     closeFilterPopup();
 });
 
 const xBtn = document.querySelector('.clear');
-
 xBtn?.addEventListener('click', () => {
     closeFilterPopup();
 });
-
-
-
-
   holders.forEach(holder => {
     const checkbox = holder.querySelector(".checkbox-input");
     const tick = holder.querySelector(".tick");
     const ticked = holder.querySelector(".ticked");
-
     updateTickImage(checkbox, tick, ticked);
-
     holder.addEventListener("click", () => {
       checkbox.checked = !checkbox.checked;
       updateTickImage(checkbox, tick, ticked);
@@ -459,13 +444,10 @@ xBtn?.addEventListener('click', () => {
       updateTickVisibility();
     });
   });
-
-
   document.querySelectorAll('.priceOpt').forEach(opt => {
     const checkbox = opt.querySelector('.checkbox-input');
     const ticked = opt.querySelector('.clearTicked');
     const empty = opt.querySelector('.clearEmpty');
-
     const updateTick = () => {
         if (checkbox.checked) {
             ticked.style.display = 'none';
@@ -509,20 +491,19 @@ xBtn?.addEventListener('click', () => {
   document.getElementById('filter-overlay').style.display = 'none';
 }
 
-  applyBtn?.addEventListener("click", applyFilters);
+    applyBtn?.addEventListener("click", applyFilters);
+    clearBtn?.addEventListener("click", () => {
+        const popup = document.querySelector(".filterPopup");
+        if (popup) {
+            popup.style.display = "flex";
+        }
+    });
 
-clearBtn?.addEventListener("click", () => {
-    const popup = document.querySelector(".filterPopup");
-    if (popup) {
-        popup.style.display = "flex";
-    }
-});
-
-document.querySelector('.filterPopup')?.addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeFilterPopup();
-    }
-});
+    document.querySelector('.filterPopup')?.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeFilterPopup();
+        }
+    });
 });
 
 function updateTickImage(checkbox, tick, ticked) {
@@ -546,7 +527,6 @@ function openFilterPopup(){
     totalBar.classList.add('show');
     filterPopup.style.display = "flex";
 }
-
 function closeFilterPopup() {
     totalBar.classList.remove('show');
     totalBar.classList.add('hide');
@@ -590,14 +570,11 @@ function applyFilters() {
       });
     });
   }
-
   if (selectedBrands.length > 0) {
     filtered = filtered.filter(product => {
       const brand = product.name.split(' ')[0].toUpperCase();
       return selectedBrands.includes(brand);
     });
   }
-
   renderProducts(filtered);
 }
-

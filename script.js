@@ -1,67 +1,54 @@
-function loadLayout() {
-    const contentDiv = document.getElementById('content');
-    const isMobile = window.innerWidth <= 768;
-    const htmlUrl = isMobile ? 'mobile.html' : 'desktop.html';
-    const cssUrl = isMobile ? 'mobile.css' : 'desktop.css';
+document.addEventListener("DOMContentLoaded", function () {
+  const app = document.getElementById("app");
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    contentDiv.innerHTML = '';
-    const existingStyles = document.querySelectorAll('link[data-dynamic]');
-    existingStyles.forEach(link => link.remove());
+  if (isMobile) {
+    loadMobileVersion();
+  } else {
+    loadDesktopVersion();
+  }
 
-    const existingScripts = document.querySelectorAll('script[data-dynamic]');
-    existingScripts.forEach(script => script.remove());
-    document.querySelector('.loader').style.display = 'block';
-    fetch(htmlUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load ${htmlUrl}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            contentDiv.innerHTML = data;
+  window.addEventListener("resize", function () {
+    const currentIsMobile = window.matchMedia("(max-width: 768px)").matches;
 
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = cssUrl;
-            link.setAttribute('data-dynamic', 'true');
-            document.head.appendChild(link);
+    if (currentIsMobile !== isMobile) {
+      location.reload();
+    }
+  });
+});
 
-            if (isMobile) {
-                const scriptMobile = document.createElement('script');
-                scriptMobile.src = 'mobile.js';
-                scriptMobile.setAttribute('data-dynamic', 'true');
-                document.body.appendChild(scriptMobile);
+function loadMobileVersion() {
+  fetch("mobile/mobile.html")
+    .then((response) => response.text())
+    .then((html) => {
+      document.getElementById("app").innerHTML = html;
 
-                const scriptMobileTwo = document.createElement('script');
-                scriptMobileTwo.src = 'mobileTwo.js';
-                scriptMobileTwo.setAttribute('data-dynamic', 'true');
-                document.body.appendChild(scriptMobileTwo);
-            } else {
-                const scriptDesktop = document.createElement('script');
-                scriptDesktop.src = 'desktop.js';
-                scriptDesktop.setAttribute('data-dynamic', 'true');
-                document.body.appendChild(scriptDesktop);
-            }
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "mobile/mobile.css";
+      document.head.appendChild(link);
 
-            document.querySelector('.loader').style.display = 'none';
-        })
-        .catch(error => {
-            contentDiv.innerHTML = '<p>Error loading layout. Please try again.</p>';
-            console.error(error);
-            document.querySelector('.loader').style.display = 'none';
-        });
+      const script = document.createElement("script");
+      script.src = "mobile/mobile.js";
+      script.defer = true;
+      document.body.appendChild(script);
+    });
 }
-window.addEventListener('load', loadLayout);
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+
+function loadDesktopVersion() {
+  fetch("desktop/desktop.html")
+    .then((response) => response.text())
+    .then((html) => {
+      document.getElementById("app").innerHTML = html;
+
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "desktop/desktop.css";
+      document.head.appendChild(link);
+
+      const script = document.createElement("script");
+      script.src = "desktop/desktop.js";
+      script.defer = true;
+      document.body.appendChild(script);
+    });
 }
-window.addEventListener('resize', debounce(loadLayout, 250));
