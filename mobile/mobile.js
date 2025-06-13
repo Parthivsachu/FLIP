@@ -276,6 +276,7 @@ function renderProducts(sortedProducts = products) {
     }
 }
 
+
 const sortButton = document.querySelector('.sort');
 const sortModal = document.querySelector('.sort-modal');
 const sortOptions = document.querySelectorAll('.sort-options li');
@@ -360,6 +361,8 @@ window.addEventListener('click', (e) => {
     filterModal.classList.add('hidden');
   }
 });
+
+
 
 document.getElementById('filter-button').addEventListener('click', () => {
     document.getElementById('filter-overlay').style.display = 'flex';
