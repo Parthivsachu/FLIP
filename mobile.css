@@ -19,7 +19,6 @@
     font-family: "bold";
     src: url("/font/Inter-Bold.woff2") ;
 }
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -537,10 +536,7 @@ body{
     height: 14px;
 }
 .button{
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
+    border-radius: 18px;
     background: #fff;
     height: 36px;
     width: 36px;
@@ -804,7 +800,7 @@ body{
 
 .nav{
     display: flex;
-    position: absolute;
+    position: fixed;
     height: 52px;
     width: 100%;
     align-items: center;
@@ -832,7 +828,6 @@ body{
     font-size: 16px;
     font-weight: 400;
     height: 19px;
-
 }
 .bottom-nav{
     display: flex;
@@ -854,72 +849,49 @@ body{
     width: calc(100% - 24px)
 }
 .apply{
-    padding: 10px 65px 0 65px;
+    padding: 11px 68px 0 65px;
     background-color: rgb(255, 88, 0);
     border-radius: 2px;
     min-height: 40px;
     font-size: 14px;
     color: rgb(255, 255, 255);
+    letter-spacing: normal;
 }
 .found{
     flex-direction: column;
     flex: 1 1 0%;
 }
-.options{
-    padding: 52px 0 56px 0;
-    z-index: 10;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    background-color: rgb(241, 243, 246); 
-    width: 40%;
-}
-.scrollY{
-    width: 100%;
-}
 .page{
-    flex-direction: row; 
-    height: 767px;
-    width: 100%;
     display: flex;
-    /* padding-top: 52px;
-    padding-bottom: 56px; */
+    flex-direction: row;
+    overflow: hidden;
+    padding-top: 52px;
+    height: 875px;
 }
-.transform{
-    transform: translate(0px, 0px);
-    align-items: stretch;
-    border-width: 0px;
-    border-style: solid;
-    box-sizing: border-box;
+.leftBar{
     display: flex;
-    flex: 1 1 0%;
     flex-direction: column;
-    margin: 0px;
-    padding: 0px;
-    min-height: 0px;
-    min-width: 0px;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    width: 100%;
+    align-items: stretch;
+    width: 33.33%;
+    background-color: rgb(241, 243, 246);
+    height: 100%;
+    padding-bottom: 56px;
 }
-.transformTwo{
-    width: 100%;
+.leftBarContents{
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 .optionOne{
     height: 56px;
     overflow: hidden;
     width: 100%;
-    transform: translate(0px, 0px);
     align-items: stretch;
     border-width: 0px;
     border-style: solid;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    min-height: 0px;
-    min-width: 0px;
-    left: 0px;
-    top: 0px;
 }
 .optionPad{
     background-color: rgb(255, 255, 255);
@@ -928,12 +900,14 @@ body{
     flex-direction: row;
 }
 .optionSelected{
-    line-clamp: 2;
     line-height: 20px;
     color: rgb(40, 116, 240);
+    /* margin-right: 8px; */
     font-size: 14px;
 }
 .optionSelect{
+    height: 74px;
+    width: 93px;
     color: rgb(0, 0, 0);
     line-height: 20px;
     margin-right: 8px;
@@ -946,11 +920,18 @@ body{
 .optionBg{
     background-color: rgb(241, 243, 246);
 }
-.right{
+
+.rightBar{
+    width: 66.67%;
+    height: 767px;
+    overflow: hidden;
+    position: sticky;
+    display: flex;
     flex-direction: column;
-    flex: 1;
-    height: 768px;
+    justify-content: center;
+    align-items: flex-start;
 }
+
 .contentBefore{
     flex-direction: column;
     flex-shrink: 1;
@@ -960,7 +941,7 @@ body{
     overflow-x: hidden;
 }
 .contentBox{
-    height: 240px;
+    /* height: 240px; */
     width: 213px;
 }
 .boxOne{
@@ -973,13 +954,11 @@ body{
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    /* position: absolute; */
     min-height: 0px;
     min-width: 0px;
-
 }
 .boxPad{
-    padding: 12px 19px 12px 18px;
+    padding: 12px 18px 12px 19px;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -988,11 +967,13 @@ body{
 .selector{
     max-width: 100%;
     color: #000;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     text-overflow: ellipsis;
     word-wrap: normal;
     font-size: 14px;
     overflow: hidden;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: 0.02px;
 }
 .holder{
     display: flex;
@@ -1012,4 +993,198 @@ body{
     color: rgb(42, 85, 229);
     font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium;
     font-size: 14px;
+    line-height: normal;
+}
+.search{
+    margin: 8px 16px; 
+    padding: 13px 12px;
+    height: 40px;
+    border: 1px solid rgba(233, 233, 233, 1.00);
+    flex-direction: row;
+    align-items: center;
+}
+.lensDiv{
+    display: flex;
+    height: 18px;
+    width: 18px;
+    margin-right: 10.5px;
+}
+.lens{
+    object-fit: contain;
+    height: 100%;
+    width: 8px;
+    display: block;
+}
+.searchBar{
+    color: #9b9b9b;
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: normal;
+}
+input::placeholder{
+    color: #9b9b9b;
+}
+.filterPopup{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+    display: none;
+    justify-self: center;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* opacity: 0; */
+    /* pointer-events: none; */
+}
+.filterPopup.active {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.32);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.total{
+    position: fixed;
+    bottom: 0;
+    /* height: 283px; */
+    background-color: #fff;
+    width: 100%;
+    /* transform: translateY(100%);  */
+    /* opacity: 0; */
+    transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+}
+.total.show {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+}
+.total.hide {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+.clearHeading{
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+}
+.added{
+height: 52px;
+}
+.clearTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cross{
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    width: 42px;
+    max-height: 16px;
+    line-height: 10px;
+    margin: 0 auto;
+}
+.shadowBar{
+    height: 4px;
+    width: 100%;
+    display: flex;
+}
+.clear{
+    text-align: left;
+    overflow: auto;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 12px;
+}
+.question{
+    padding: 12px 16px 16px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.header{
+    font-size: 16px;
+    line-height: normal;
+    color: rgb(33, 33, 33);
+    font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium;
+}
+.would{
+    color:rgb(135, 135, 135) ;
+    line-height: 16px;
+    max-height: 16px;
+    line-clamp: 1;
+    word-break: break-word;
+    margin-top: 4px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+.clearOptions{
+    padding: 0 16px 16px;
+    flex-direction: column;
+}
+.clearBtn{
+    margin-top: 16px;
+    flex-direction: row;
+    flex: 1 1 0%;
+}
+.btnpad{
+    padding: 12px 0;
+    margin-right: 8px;
+    border-radius: 2px;
+    border: 1px solid rgb(240, 240, 240);
+}
+.btnStyle{
+    background-color: rgb(40, 116, 240);
+    margin-right: 0;
+    border: 1px solid rgba(40, 116, 240, 1.00);
+    height: 41px;
+}
+.cancel{
+    color: #000;
+    text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+}
+.clearText{
+    color: #fff;
+    text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+}
+.priceOpt{
+    padding: 12px 0;
+    flex-direction: row;
+}
+.priceTick, .brandTick{
+    display: none;
+}
+.clearPrice{
+    color: #000;
+    margin-left: 16px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+}
+.clearTicked, .clearEmpty{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.clearEmpty{
+    display: none;
+}
+
+.itemCountPrice, .itemCountBrand {
+  display: inline-block;
+  color: #2874F0;
+  visibility: visible;
 }

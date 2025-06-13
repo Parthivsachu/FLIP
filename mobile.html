@@ -32,15 +32,14 @@
                             <div class="common sortDiv" id="sort-button">
                                 <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m144 168 40 40 40-40M184 112v96M48 128h72M48 64h136M48 192h56"></path></svg>
                                 <div class="css2 sort">Sort</div>
-                                
                             </div>
                         </div>
                         <div class="common" style="height: 16px; width: 1px; background-color: rgb(213, 215, 219);"></div>
                         <div style="flex: 1 1 0%;">
-                            <div class="common sortDiv">
+                            <div class="common sortDiv" id="filter-button">
                                 <div class="common"><svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle></svg>
                                 </div>
-                                <div class="css2 sort" id="filter-button" style="cursor: pointer;">Filter</div>
+                                <div class="css2 sort" style="cursor: pointer;">Filter</div>
                             </div>
                         </div>
                     </div>
@@ -330,11 +329,6 @@
 
 
 
-
-
-
-
-
         <div id="sort-modal" class="sort-modal hidden">
             <div class="sort-card">
                 <div>
@@ -379,463 +373,462 @@
         </div>
 
 
-        <div id="filter-overlay" class="common" style="display: none; position: fixed; top: 0; left: 0; z-index: 999; width: 100%; height: 100%; background-color: white; overflow: auto;">
+        <div id="filter-overlay" class="filter-overlay common" style="display: none; position: fixed; top: 0; left: 0; z-index: 999; width: 100%; height: 100%; background-color: white; overflow: auto;">
             <nav class="nav">
                 <div class="back-arrow"><svg width="19" height="16" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg"><path d="M17.556 7.847H1M7.45 1L1 7.877l6.45 6.817" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></div>
-                <div class="heading"><h1>Filters</h1>
+                <div class="heading"><h1>Filters</h1></div>
+                <span href="" style="right: 19px;font-size: 13px;position: absolute;"><span style="white-space: nowrap;letter-spacing: normal;color: #000;display: none;" class="clearMain">Clear Filters</span></span>
             </nav>
-
-            <div class="options common">
-                <div class="page common">
-
-                    <div class="transform leftBar">
-                        <div style="background-color: rgb(241, 243, 246);display: flex;">
-                            <div class="common scrollY">
-                                <div style="height: 1465px;width: auto;">
-
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad common" data-id="priceTag">
-                                                <div class="optionSelected">Price</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common" data-id="brandName" >
-                                                <div class="optionSelect">Brand</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">F-Assured</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Customer Ratings</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">GST Invoice Available</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">RAM</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Internal Storage</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Battery Capacity</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Screen Size</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Primary Camera</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Secondary Camera</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Processor Brand</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Speciality</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Resolution Type</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Operating System</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Network Type</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Sim Type</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Offers</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Features</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Type</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Number of Cores</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Availability</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Discount</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Operating System Version Number</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Clock Speed</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="optionOne common">
-                                        <div class="common" style="flex: 1 1 0%;">
-                                            <div class="optionPad optionBg common">
-                                                <div class="optionSelect">Category</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=" common rightBar" style="background-color: #fff; position: absolute;right: 0;">
-                        <div class="right common">
-                            <div class="contentBefore" style="height: 767px;">
-
-                                <div class="common contentBox priceTag" id="priceTag">
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Rs.10000 and Below</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Rs. 10000 - Rs. 15000</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Rs. 15000 - Rs. 20000</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Rs. 20000 - Rs. 30000</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Rs. 30000 and Above</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="common contentBox brandName"  id="brandName" style="display: none;">
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Apple</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">SAMSUNG</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Google</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">MOTOROLA</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">vivo</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">OPPO</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Infinix</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">Nothing</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">POCO</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="boxOne">
-                                        <div style="flex: 1;">
-                                            <div class="common boxPad">
-                                                <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
-                                                    <div class="holder">
-                                                        <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                        <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
-                                                    </div>
-                                                    <div style="flex-direction: column; flex:1;" class="common">
-                                                        <div class="selector common">realme</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="common viewMore"><div class="viewMoreText">View More</div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-            <div class="bottom-nav" >
+            <div class="bottom-nav">
                 <div class="bottom-margin common">
-                    <div class="found common">
+                    <div class="found common" style="justify-content: center;">
                         <div style="font-size: 16px;line-height: 19px;color: #000;white-space: nowrap;max-width: 100%;">11,542</div>
-                        <div style="font-size: 12px;white-space: nowrap; color: rgb(135, 135, 135);max-width: 100%;">products found</div>
+                        <div style="font-size: 12px;white-space: nowrap; color: rgb(135, 135, 135);max-width: 100%;line-height: normal;">products found</div>
                     </div>
-                    <div class="button common">
-                        <div class="apply common">Apply</div>
+                    <div class="common">
+                        <button class="apply common">Apply</button>
                     </div>
                 </div>
             </div>
+            <div class="page">
+                <div class="leftBar">
+                    <div class="leftBarContents">
+                        <div class="optionOne common">
+                            <div class="common" style="flex: 1 1 0%;">
+                                <div class="optionPad common" data-id="priceTag">
+                                    <div class="optionSelected">Price</div>
+                                    <!-- <div class="itemCountPrice" style="color: #2874f0;" >0</div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common" data-id="brandName">
+                                        <div class="optionSelect">Brand</div>
+                                        <!-- <div class="itemCountBrand" style="color: #2874F0;" >0</div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">F-Assured</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Customer Ratings</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">GST Invoice Available</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">RAM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Internal Storage</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Battery Capacity</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Screen Size</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Primary Camera</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Secondary Camera</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Processor Brand</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Speciality</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Resolution Type</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Operating System</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Network Type</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Sim Type</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Offers</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Features</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Type</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Number of Cores</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Availability</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Discount</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Operating System Version Number</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Clock Speed</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="optionOne common">
+                                <div class="common" style="flex: 1 1 0%;">
+                                    <div class="optionPad optionBg common">
+                                        <div class="optionSelect">Category</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="rightBar">
+                    <div class="contentBefore">
+                        <div class="common contentBox priceTag" id="priceTag">
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="" style="display: flex;flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-price="10000-0">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="">
+                                                <div class="selector common">Rs.10000 and Below</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-price="10000-15000">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">Rs. 10000 - Rs. 15000</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-price="15000-20000">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">Rs. 15000 - Rs. 20000</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-price="20000-30000">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">Rs. 20000 - Rs. 30000</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-price="30000-999999">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">Rs. 30000 and Above</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="common contentBox brandName" id="brandName" style="display: none;">
+                            <div class="search common">
+                                <div class="lensDiv"><img src="https://rukminid2.flixcart.com/www/40/40/promos/05/02/2019/2c3684ce-966a-43b1-b93b-35d288875e8e.png?q=90" alt="lens" class="lens"></div>
+                                <input type="text" placeholder="Search Brand" class="searchBar">
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-brand="apple">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">Apple</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-brand="samsung">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">SAMSUNG</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-brand="google">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">Google</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-brand="motorola">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">MOTOROLA</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-brand="vivo">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">vivo</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxOne">
+                                <div style="flex: 1;">
+                                    <div class="common boxPad">
+                                        <div class="common" style="flex-direction: row;align-items: center;flex: 1;">
+                                            <div class="holder" data-brand="oppo">
+                                                <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                                <img class="tick" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                                <img class="ticked" src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="" class="" aria-busy="false" data-highres-loaded="false" loading="lazy" srcset="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 1x, https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png 2x, " fetchpriority="auto" style="filter: none; opacity: 1; transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out; width: 100%; height: 100%; margin: auto; object-fit: contain;">
+                                            </div>
+                                            <div style="flex-direction: column; flex:1;" class="common">
+                                                <div class="selector common">OPPO</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="common viewMore"><div class="viewMoreText">View More</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+
+        <div class="filterPopup">
+                <div class="total">
+                    <div class="clearHeading">
+                        <div style="display: flex; " class="added">
+                            <div class="clearTitle">
+                                <span class="cross"><svg width="15" height="15" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M1.054 1l10.543 10.65m.054-10.596L1 11.597" stroke="#414141" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></span>
+                            </div>
+                            <div class="clear"><h1 style="font-size: 16px; font-weight: 400;line-height: normal;">Clear Filters</h1></div>
+                        </div>
+                        <div class="shadowBar"><img src="https://rukminim1.flixcart.com/www/30/10/promos/01/08/2018/e364d9fe-1225-4814-bfee-2c461bf1c442.png?q=90" loading="eager" alt="" style="width: 100%; height: 100%; margin: auto; object-fit: fill; opacity: 1;"></div>
+                    </div>
+                    
+                    <div>
+                        <div class="question common">
+                            <div class="header common">Clear Filters</div>
+                            <div class="would">Would you like to clear the following filters?</div>
+                        </div>
+                        <div class="clearOptions common">
+
+
+                                <div class="priceOpt common priceTick">
+                                    <div style="width: 18px; height: 18px;">
+                                        <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                        <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="clearTicked" class="clearTicked">
+                                        <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="clearEmpty" class="clearEmpty">
+                                    </div>
+                                    <div class="clearPrice">Price</div>
+                                </div>
+
+                                <div class="priceOpt common brandTick">
+                                    <div style="width: 18px; height: 18px;">
+                                        <input type="checkbox" name="" id="" class="checkbox-input" style="height: 18px;width: 18px;">
+                                        <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/checked-b672f083.png?q=90" alt="clearTicked" class="clearTicked">
+                                        <img src="https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png?q=90" alt="clearEmpty" class="clearEmpty">
+                                    </div>
+                                    <div class="clearPrice">Brand</div>
+                                </div>
+
+
+                            <div class="clearBtn common">
+                                <div style="flex: 1 1 0%;">
+                                    <div class="btnpad common">
+                                        <div class="cancel common">Cancel</div>
+                                    </div>
+                                </div>
+                                <div style="flex: 1 1 0%;">
+                                    <div class="btnpad common btnStyle">
+                                        <div class="clearText common">Clear</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
 
 

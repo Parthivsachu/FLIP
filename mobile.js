@@ -2,7 +2,7 @@ const products = [
     {
         id: 1,
         sponsored: true,
-        name: "MOTOROLA Edge 60 Pro (Pantone Shadow, 256 GB)",
+        name: "samsung Edge 60 Pro (Pantone Shadow, 256 GB)",
         reviewCount: "(42370)",
         assured: true,
         discount: "18%",
@@ -297,7 +297,6 @@ function toggleSortModal() {
     }
 }
 
-
 function updateSelectedOption(selectedOption) {
     sortOptions.forEach(option => {
         const checkbox = option.querySelector('.checkbox-input');
@@ -314,6 +313,7 @@ function updateSelectedOption(selectedOption) {
         }
     });
 }
+
 
 function sortProducts(sortBy) {
     let sortedProducts = [...products];
@@ -336,7 +336,6 @@ function sortProducts(sortBy) {
             sortedProducts.sort((a, b) => b.id - a.id);
             break;
     }
-
     renderProducts(sortedProducts);
 }
 
@@ -356,38 +355,18 @@ if (sortButton && sortModal && sortOptions) {
         if (e.target === sortModal) {
             toggleSortModal();
         }
-});
-
+    });
 }
-
-    if (sortModal) {
-        sortModal.classList.add('hidden');
         updateSelectedOption(currentSort);
         sortProducts(currentSort);
-    } else {
-        renderProducts();
-    }
 
-const filterBtn = document.getElementById('filter-button');
-const filterModal = document.getElementById('filter-modal');
-
-filterBtn.addEventListener('click', () => {
-  if (filterModal.classList.contains('show')) {
-    filterModal.classList.remove('show');
-    filterModal.classList.add('hidden');
-  } else {
-    filterModal.classList.remove('hidden');
-    filterModal.classList.add('show');
-  }
-});
-
+        
 window.addEventListener('click', (e) => {
   if (!filterModal.contains(e.target) && !filterBtn.contains(e.target)) {
     filterModal.classList.remove('show');
     filterModal.classList.add('hidden');
   }
 });
-
 
 document.getElementById('filter-button').addEventListener('click', () => {
     document.getElementById('filter-overlay').style.display = 'flex';
@@ -411,3 +390,214 @@ document.querySelectorAll('.optionPad').forEach(option => {
         option.classList.remove('optionBg');
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const holders = document.querySelectorAll(".holder");
+    const clearBtn = document.querySelector(".clearMain");
+    const applyBtn = document.querySelector(".apply");
+    const clearTextBtn = document.querySelector('.clearText');
+    const priceTick = document.querySelector('.priceTick');
+    const brandTick = document.querySelector('.brandTick');
+
+function updateTickVisibility() {
+    const anyPriceChecked = document.querySelector('.holder[data-price] .checkbox-input:checked');
+    const anyBrandChecked = document.querySelector('.holder[data-brand] .checkbox-input:checked');
+
+    priceTick.style.display = anyPriceChecked ? 'flex' : 'none';
+    brandTick.style.display = anyBrandChecked ? 'flex' : 'none';
+}
+
+document.querySelectorAll('.holder[data-price] .checkbox-input, .holder[data-brand] .checkbox-input')
+    .forEach(cb => {
+        cb.addEventListener('change', updateTickVisibility);
+    });
+
+updateTickVisibility();
+
+clearTextBtn?.addEventListener('click', () => {
+    document.querySelectorAll('.holder[data-price] .checkbox-input, .holder[data-brand] .checkbox-input')
+        .forEach(cb => cb.checked = false);
+
+    document.querySelectorAll('.holder[data-price], .holder[data-brand]').forEach(holder => {
+        const checkbox = holder.querySelector('.checkbox-input');
+        const tick = holder.querySelector('.tick');
+        const ticked = holder.querySelector('.ticked');
+        if (tick && ticked) updateTickImage(checkbox, tick, ticked);
+    });
+    updateTickVisibility();
+    updateClearButton();
+    closeFilterPopup();
+});
+
+const cancelBtn = document.querySelector('.cancel');
+
+cancelBtn?.addEventListener('click', () => {
+    closeFilterPopup();
+});
+
+const xBtn = document.querySelector('.clear');
+
+xBtn?.addEventListener('click', () => {
+    closeFilterPopup();
+});
+
+
+
+
+  holders.forEach(holder => {
+    const checkbox = holder.querySelector(".checkbox-input");
+    const tick = holder.querySelector(".tick");
+    const ticked = holder.querySelector(".ticked");
+
+    updateTickImage(checkbox, tick, ticked);
+
+    holder.addEventListener("click", () => {
+      checkbox.checked = !checkbox.checked;
+      updateTickImage(checkbox, tick, ticked);
+      updateClearButton();
+      updateTickVisibility();
+    });
+  });
+
+
+  document.querySelectorAll('.priceOpt').forEach(opt => {
+    const checkbox = opt.querySelector('.checkbox-input');
+    const ticked = opt.querySelector('.clearTicked');
+    const empty = opt.querySelector('.clearEmpty');
+
+    const updateTick = () => {
+        if (checkbox.checked) {
+            ticked.style.display = 'none';
+            empty.style.display = 'block';
+        } else {
+            ticked.style.display = 'block';
+            empty.style.display = 'none';
+        }
+    };
+    updateTick();
+    opt.addEventListener('click', () => {
+        checkbox.checked = !checkbox.checked;
+        updateTick();
+    });
+});
+
+  function applyFilters() {
+  const selectedPrices = Array.from(document.querySelectorAll('.priceTag .holder .checkbox-input:checked'))
+    .map(cb => cb.closest('.holder').getAttribute('data-price'));
+
+  const selectedBrands = Array.from(document.querySelectorAll('.brandName .holder .checkbox-input:checked'))
+    .map(cb => cb.closest('.holder').getAttribute('data-brand')?.toUpperCase());
+
+  let filtered = products;
+  if (selectedPrices.length > 0) {
+    filtered = filtered.filter(product => {
+      return selectedPrices.some(price => {
+        const [min, max] = price.split('-').map(Number);
+        return product.discountedPrice >= min && product.discountedPrice <= max;
+      });
+    });
+  }
+
+  if (selectedBrands.length > 0) {
+    filtered = filtered.filter(product => {
+      const brand = product.name.split(' ')[0].toUpperCase();
+      return selectedBrands.includes(brand);
+    });
+  }
+  renderProducts(filtered);
+  document.getElementById('filter-overlay').style.display = 'none';
+}
+
+  applyBtn?.addEventListener("click", applyFilters);
+
+clearBtn?.addEventListener("click", () => {
+    const popup = document.querySelector(".filterPopup");
+    if (popup) {
+        popup.style.display = "flex";
+    }
+});
+
+document.querySelector('.filterPopup')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeFilterPopup();
+    }
+});
+});
+
+function updateTickImage(checkbox, tick, ticked) {
+  const isChecked = checkbox.checked;
+  tick.style.display = isChecked ? "none" : "block";
+  ticked.style.display = isChecked ? "block" : "none";
+}
+
+function updateClearButton() {
+  const anyChecked = document.querySelector(".holder .checkbox-input:checked");
+  const clearBtn = document.querySelector(".clearMain");
+  if (clearBtn) clearBtn.style.display = anyChecked ? "block" : "none";
+}
+
+const filterPopup = document.querySelector('.filterPopup');
+const totalBar = document.querySelector('.total');
+
+function openFilterPopup(){
+    filterPopup.classList.add('active');
+    totalBar.classList.remove('hide');
+    totalBar.classList.add('show');
+    filterPopup.style.display = "flex";
+}
+
+function closeFilterPopup() {
+    totalBar.classList.remove('show');
+    totalBar.classList.add('hide');
+
+    setTimeout(() => {
+        filterPopup.classList.remove('active');
+        filterPopup.style.display="none";
+        totalBar.classList.remove('hide');
+    }, 400);
+}
+
+clearBtn?.addEventListener("click", () => {
+    openFilterPopup();    
+});
+
+document.querySelector('.cross')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeFilterPopup();
+});
+
+document.querySelector('.cancel')?.addEventListener('click', () => {
+    closeFilterPopup();
+});
+
+function applyFilters() {
+  const selectedPrices = Array.from(document.querySelectorAll('.priceTag .holder .checkbox-input:checked'))
+    .map(cb => cb.closest('.holder').getAttribute('data-price'));
+
+  const selectedBrands = Array.from(document.querySelectorAll('.brandName .holder .checkbox-input:checked'))
+    .map(cb => {
+      const productName = cb.closest('.holder').nextElementSibling?.textContent || '';
+      return productName.split(' ')[0].toUpperCase();
+    });
+
+  let filtered = products;
+  if (selectedPrices.length > 0) {
+    filtered = filtered.filter(product => {
+      return selectedPrices.some(priceRange => {
+        const [min, max] = priceRange.split('-').map(Number);
+        return product.discountedPrice >= min && product.discountedPrice <= max;
+      });
+    });
+  }
+
+  if (selectedBrands.length > 0) {
+    filtered = filtered.filter(product => {
+      const brand = product.name.split(' ')[0].toUpperCase();
+      return selectedBrands.includes(brand);
+    });
+  }
+
+  renderProducts(filtered);
+}
+

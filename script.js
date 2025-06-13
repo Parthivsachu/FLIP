@@ -4,17 +4,13 @@ function loadLayout() {
     const htmlUrl = isMobile ? 'mobile.html' : 'desktop.html';
     const cssUrl = isMobile ? 'mobile.css' : 'desktop.css';
 
-    // Clean up previous content and styles
     contentDiv.innerHTML = '';
     const existingStyles = document.querySelectorAll('link[data-dynamic]');
     existingStyles.forEach(link => link.remove());
 
-    // Clean up previous scripts
     const existingScripts = document.querySelectorAll('script[data-dynamic]');
     existingScripts.forEach(script => script.remove());
-
     document.querySelector('.loader').style.display = 'block';
-
     fetch(htmlUrl)
         .then(response => {
             if (!response.ok) {
@@ -56,9 +52,7 @@ function loadLayout() {
             document.querySelector('.loader').style.display = 'none';
         });
 }
-
 window.addEventListener('load', loadLayout);
-
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {

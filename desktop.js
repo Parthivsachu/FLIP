@@ -622,7 +622,6 @@ if (point1 && point2 && blueLine) {
     point2.addEventListener('touchstart', onDrag(point2, false));
 }
 
-
 const dotElements = document.querySelectorAll('.dot-div .dots');
 const pricePoints = [0, 15000, 20000, 25000, 30000, 999999];
 
@@ -640,10 +639,8 @@ dotElements.forEach((dot, index) => {
 
         const minPercent = (minVal / 30000) * 100;
         const maxPercent = (maxVal >= 999999 ? 100 : (maxVal / 30000) * 100);
-
         point1.style.left = `${(minPercent / 100) * sliderWidth}px`;
         point2.style.left = `${(maxPercent / 100) * sliderWidth}px`;
-
         updateBlueLine();
         applyFilters();
     });
