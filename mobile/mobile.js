@@ -24,7 +24,7 @@ const products = [
     {
         id: 2,
         sponsored: false,
-        name: "Tecno Pova Curve 5G (Geek Black, 128 GB)",
+        name: "Google Pova Curve 5G (Geek Black, 128 GB)",
         reviewCount: "",
         assured: false,
         discount: "15%",
@@ -134,7 +134,7 @@ const products = [
     {
         id: 7,
         sponsored: true,
-        name: "MOTOROLA Edge 60 Pro (Pantone Shadow, 256 GB)",
+        name: "Oppo Edge (Shadow, 256 GB)",
         reviewCount: "(4,773)",
         assured: true,
         discount: "18%",
@@ -178,7 +178,7 @@ const products = [
     {
         id: 9,
         sponsored: true,
-        name: "MOTOROLA Edge 60 Pro (Pantone Shadow, 256 GB)",
+        name: "Vivo V20 Pro (Pantone Shadow, 256 GB)",
         reviewCount: "(4,773)",
         assured: true,
         discount: "2%",

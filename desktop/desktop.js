@@ -166,8 +166,8 @@ const products = [
     },
     {
         id: 7,
-        name: "Tecno Pova Curve 5G (Geek Black, 128 GB)",
-        brand: "Tecno",
+        name: "Oppo Pova Curve 5G (Geek Black, 128 GB)",
+        brand: "OPPO",
         rating: 4.6,
         ratingCount: 20358,
         reviewsCount: 1191,
@@ -327,8 +327,8 @@ const products = [
     },
        {
         id: 13,
-        name: "MOTOROLA Edge 60 Pro (PANTONE Shadow, 256 GB)",
-        brand: "MOTOROLA",
+        name: "Vivo V20 Pro (PANTONE Shadow, 256 GB)",
+        brand: "VIVO",
         rating: 4.5,
         ratingCount: 18000,
         reviewsCount: 1000,
@@ -631,7 +631,6 @@ dotElements.forEach((dot, index) => {
 
         const minVal = pricePoints[index];
         const maxVal = pricePoints[index + 1];
-
         minPrice = minVal;
         maxPrice = maxVal;
         minSelect.value = minVal;
