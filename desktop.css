@@ -61,7 +61,7 @@ nav {
     z-index: 7;
     flex-grow: 1 1 auto;
     overflow: hidden;
-    /* box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.3), 0 3px 6px -2px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.3), 0 3px 6px -2px rgba(0, 0, 0, 0.2);
 }
 .empty {
     height: 100%;
@@ -322,6 +322,14 @@ nav {
 .filt span{
     line-height: 25.2px;
 }
+.clear{
+    display: none;
+    color: #2874f0;
+    font-size: 11.3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
 .subs{
     padding: 16px;
     border-bottom: 1px solid #f0f0f0;
@@ -413,7 +421,7 @@ nav {
 }
 .point1{
     transform: translateX(0px);
-    left: -13.5px;
+    left: -1.5px;
     top: -3.5px;
     transition: translate .5s ease-out;
     display: inline-block;
@@ -422,6 +430,31 @@ nav {
     cursor: pointer;
     width: 20px;
     height: 20px;
+}
+.point2{
+    transform: translateX(-2.19px);
+    left: 230.5px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    top: -3.5px;
+    transition: translate .5s ease-out;
+}
+.point1,
+.point2 {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  /* background: #fff; */
+  /* border: 2px solid #999; */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
 }
 .round{
     right: 0;
@@ -433,18 +466,7 @@ nav {
     background-color: #fff;
     top: 3.5px;
 }
-.point2{
-    transform: translateX(-1.19px);
-    right: -6.5px;
-    display: inline-block;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    top: -3.5px;
-    transition: translate .5s ease-out;
-}
+
 .line{
     background-color: #c2c2c2;
     height: 2px;
@@ -460,6 +482,15 @@ nav {
     top: 4px;
     height: 6px;
 }
+.blue.line {
+  position: absolute;
+  height: 6px;
+  background-color: #2874f0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 4px;
+}
 .dot-div{
     display:flex;
     margin-top: -13px;
@@ -471,6 +502,7 @@ nav {
     text-align: left;
     color: #c2c2c2;
     font-size: 20px;
+    cursor: pointer;
 }
 .range{
     color: #a3a3a3;
@@ -579,15 +611,31 @@ nav {
     width: 100%;
     position: relative;
     display: block;
-    vertical-align: middle;
     line-height: 19.6px;
 }
 .checkbox-input{
     visibility: hidden;
     position: absolute;
-    /* top: 10px; */
     left: 0;
     line-height: 19.6px;
+}
+.checkbox-input:checked + .sample::before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: 5px;
+    top: 3px;
+    width: 2px;
+    height: 6px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    backface-visibility: hidden;
+}
+.checkbox-input:checked + .sample {
+    background: #2874f0;
+    border:solid #2874f0;
+    border-width: 0 2px 2px 0;
 }
 .checkbox-text{
     vertical-align: top;
