@@ -389,6 +389,8 @@ document.querySelectorAll('.optionPad').forEach(option => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
     const holders = document.querySelectorAll(".holder");
     const clearBtn = document.querySelector(".clearMain");
     const applyBtn = document.querySelector(".apply");
@@ -412,29 +414,40 @@ document.querySelectorAll('.holder[data-price] .checkbox-input, .holder[data-bra
 updateTickVisibility();
 
 clearTextBtn?.addEventListener('click', () => {
-    document.querySelectorAll('.holder[data-price] .checkbox-input, .holder[data-brand] .checkbox-input')
-        .forEach(cb => cb.checked = false);
+    document.querySelectorAll('.holder[data-price] .checkbox-input')
+        .forEach(cb => {
+            cb.checked = false;
+            const holder = cb.closest('.holder');
+            const tick = holder.querySelector('.tick');
+            const ticked = holder.querySelector('.ticked');
+            if (tick && ticked) updateTickImage(cb, tick, ticked);
+        });
 
-    document.querySelectorAll('.holder[data-price], .holder[data-brand]').forEach(holder => {
-        const checkbox = holder.querySelector('.checkbox-input');
-        const tick = holder.querySelector('.tick');
-        const ticked = holder.querySelector('.ticked');
-        if (tick && ticked) updateTickImage(checkbox, tick, ticked);
-    });
+    document.querySelectorAll('.holder[data-brand] .checkbox-input')
+        .forEach(cb => {
+            cb.checked = false;
+            const holder = cb.closest('.holder');
+            const tick = holder.querySelector('.tick');
+            const ticked = holder.querySelector('.ticked');
+            if (tick && ticked) updateTickImage(cb, tick, ticked);
+        });
+
     updateTickVisibility();
     updateClearButton();
     closeFilterPopup();
 });
+
 
 const cancelBtn = document.querySelector('.cancel');
 cancelBtn?.addEventListener('click', () => {
     closeFilterPopup();
 });
 
-const xBtn = document.querySelector('.clear');
+const xBtn = document.querySelector('.clearTitle');
 xBtn?.addEventListener('click', () => {
     closeFilterPopup();
 });
+
   holders.forEach(holder => {
     const checkbox = holder.querySelector(".checkbox-input");
     const tick = holder.querySelector(".tick");
@@ -507,6 +520,19 @@ xBtn?.addEventListener('click', () => {
             closeFilterPopup();
         }
     });
+
+
+
+
+    clearBtn?.addEventListener("click", () => {
+    openFilterPopup();    
+});
+
+document.querySelector('.cross')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeFilterPopup();
+});
+
 });
 
 function updateTickImage(checkbox, tick, ticked) {
@@ -541,43 +567,3 @@ function closeFilterPopup() {
     }, 400);
 }
 
-clearBtn?.addEventListener("click", () => {
-    openFilterPopup();    
-});
-
-document.querySelector('.cross')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeFilterPopup();
-});
-
-document.querySelector('.cancel')?.addEventListener('click', () => {
-    closeFilterPopup();
-});
-
-function applyFilters() {
-  const selectedPrices = Array.from(document.querySelectorAll('.priceTag .holder .checkbox-input:checked'))
-    .map(cb => cb.closest('.holder').getAttribute('data-price'));
-
-  const selectedBrands = Array.from(document.querySelectorAll('.brandName .holder .checkbox-input:checked'))
-    .map(cb => {
-      const productName = cb.closest('.holder').nextElementSibling?.textContent || '';
-      return productName.split(' ')[0].toUpperCase();
-    });
-
-  let filtered = products;
-  if (selectedPrices.length > 0) {
-    filtered = filtered.filter(product => {
-      return selectedPrices.some(priceRange => {
-        const [min, max] = priceRange.split('-').map(Number);
-        return product.discountedPrice >= min && product.discountedPrice <= max;
-      });
-    });
-  }
-  if (selectedBrands.length > 0) {
-    filtered = filtered.filter(product => {
-      const brand = product.name.split(' ')[0].toUpperCase();
-      return selectedBrands.includes(brand);
-    });
-  }
-  renderProducts(filtered);
-}
