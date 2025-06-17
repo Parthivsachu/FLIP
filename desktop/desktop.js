@@ -549,7 +549,7 @@ function updateBlueLine() {
     const x2 = point2.offsetLeft + point2.offsetWidth / 2;
     const minLeft = Math.min(x1, x2);
     const maxLeft = Math.max(x1, x2);
-    blueLine.style.left = `${minLeft}px`;
+    blueLine.style.left = `-1px`;
     blueLine.style.width = `${maxLeft - minLeft}px`;
 }
 
